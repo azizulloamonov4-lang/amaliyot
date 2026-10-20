@@ -1,0 +1,158 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8f7ff;
+}
+
+.header {
+  width: 100%;
+  min-height: 85px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #eee9ff;
+  box-shadow: 0 4px 25px rgba(60, 30, 120, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  text-decoration: none;
+  color: #19152d;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.logo span:last-child {
+  color: #7952e8;
+}
+
+.logo-icon {
+  color: #7952e8;
+  margin-right: 5px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #696579;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #7952e8;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-btn,
+.signup-btn {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.login-btn {
+  color: #28213c;
+}
+
+.signup-btn {
+  padding: 13px 20px;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(135deg, #9064f5, #7045dc);
+  box-shadow: 0 5px 15px rgba(121, 82, 232, 0.2);
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(121, 82, 232, 0.3);
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: transparent;
+  color: #7952e8;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  .header {
+    padding: 0 5%;
+  }
+
+  .navbar {
+    gap: 16px;
+  }
+
+  .header-buttons {
+    gap: 12px;
+  }
+
+  .navbar a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    min-height: 72px;
+  }
+
+  .navbar,
+  .header-buttons {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar.show {
+    display: flex;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: white;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0 10px 20px #21104410;
+  }
+
+  .navbar.show a {
+    font-size: 15px;
+  }
+}
